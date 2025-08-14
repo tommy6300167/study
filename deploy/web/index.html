@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>歡迎使用 Study Group 應用程式</h1>
+        <div class="card">
+            <h2>系統狀態</h2>
+            <p id="status">正在檢查伺服器狀態...</p>
+            <button onclick="checkStatus()">重新檢查</button>
+        </div>
+        <div class="card">
+            <h2>快速操作</h2>
+            <button onclick="sendMessage()">發送測試訊息</button>
+            <div id="response"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
