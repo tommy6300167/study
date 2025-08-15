@@ -8,6 +8,7 @@ TAG ?= latest
 PLATFORMS ?= linux/amd64,linux/arm64
 
 # ========== Go ==========
+
 run:
 	go run main.go
 
@@ -43,7 +44,7 @@ docker-push:
 	docker push $(IMAGE):$(TAG)
 
 docker-publish:
-	# 初始化 buildx（已存在則忽略錯誤）
+	# 初始化 buildx
 	docker buildx create --use >/dev/null 2>&1 || true
 	docker buildx build \
 		--platform $(PLATFORMS) \

@@ -9,15 +9,13 @@ IMAGE="${DOCKER_USER}/${APP_NAME}:${TAG}"
 echo "🚀 本地自動化部署開始..."
 
 make build
-
-make docker-build
+make docker-build 
 
 echo "🔐 Docker Hub 登入"
 docker login || true
 
 echo "📦 推送到 Docker Hub: ${IMAGE}"
-docker tag "${APP_NAME}:latest" "${IMAGE}"
-docker push "${IMAGE}"
+docker push "${IMAGE}" 
 
 echo "▶️ 以 .env（若存在）啟動本地容器"
 make docker-run || true
